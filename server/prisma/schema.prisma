@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model App {
+  id         Int         @id @default(autoincrement())
+  name       String      @unique
+  icon       String?
+  playerApps PlayerApp[]
+}
+
+model PlayerApp {
+  id       Int     @id @default(autoincrement())
+  page     Int
+  app      App     @relation(fields: [appId], references: [id])
+  appId    Int
+  player   Player? @relation(fields: [playerId], references: [id])
+  playerId Int?
+  favorite Boolean @default(false)
+  atHome   Boolean @default(true)
+}
+
+model Player {
+  id       Int         @id @default(autoincrement())
+  playerId Int         @unique
+  apps     PlayerApp[]
+}

@@ -10,8 +10,12 @@
     "@citizenfx/server": "2.0.9601-1",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^22.5.0",
+    "prisma": "^5.18.0",
     "rollup": "^4.21.1",
     "tslib": "^2.7.0",
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.18.0"
   }
 }
