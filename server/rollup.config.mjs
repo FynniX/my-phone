@@ -3,7 +3,7 @@ import typescript from "@rollup/plugin-typescript"
 
 export default {
   input: 'src/index.ts',
-  externals: ['@prisma/client'],
+  external: ['@prisma/client'],
   output: {
     file: 'dist/bundle.js',
     format: 'cjs',
