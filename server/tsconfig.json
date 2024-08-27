@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2017",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "types": ["@citizenfx/server"]
+  },
+  "include": ["src"]
+}
