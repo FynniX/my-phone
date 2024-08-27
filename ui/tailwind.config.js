@@ -14,7 +14,13 @@ export default {
           DEFAULT: "#4692ff",
         },
       },
+      width: {
+        phone: 432,
+      },
+      height: {
+        phone: 886,
+      },
     },
   },
   plugins: [],
-};
+}
