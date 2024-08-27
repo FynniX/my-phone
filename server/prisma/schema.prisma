@@ -33,6 +33,6 @@ model PlayerApp {
 
 model Player {
   id       Int         @id @default(autoincrement())
-  playerId Int         @unique
+  playerId String      @unique
   apps     PlayerApp[]
 }
