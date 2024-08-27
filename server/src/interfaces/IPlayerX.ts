@@ -1,10 +1,10 @@
-import { IPlayerAccount } from "@/interfaces/IPlayerAccount"
-import { IPlayerCoords } from "@/interfaces/IPlayerCoords"
-import { IPlayerMetadata } from "@/interfaces/IPlayerMetadata"
-import { IPlayerVariables } from "@/interfaces/IPlayerVariables"
-import { IPlayerWeapon } from "@/interfaces/IPlayerWeapon"
-import { IPlayerInventoryItem } from "@/interfaces/IPlayerInventoryItem"
-import { IPlayerJob } from "@/interfaces/IPlayerJob"
+import { IPlayerAccount } from "./IPlayerAccount"
+import { ICoords } from "./ICoords"
+import { IPlayerMetadata } from "./IPlayerMetadata"
+import { IPlayerVariables } from "./IPlayerVariables"
+import { IPlayerWeapon } from "./IPlayerWeapon"
+import { IPlayerInventoryItem } from "./IPlayerInventoryItem"
+import { IPlayerJob } from "./IPlayerJob"
 
 export interface IPlayerX {
   maxWeight: number,
@@ -15,7 +15,7 @@ export interface IPlayerX {
   group: string
   playerId: number,
   source: number,
-  coords: IPlayerCoords,
+  coords: ICoords & { heading: number },
   accounts: IPlayerAccount[],
   admin: boolean,
   weight: number,
@@ -32,9 +32,9 @@ export interface IPlayerX {
   canSwapItem: (firstItem: string, firstItemCount: number, testItem: string, testItemCount: number) => boolean,
   clearMeta: (index: string | Record<string, any>) => void,
   getMeta: (index: string | undefined, subIndex?: string) => unknown,
-  getAccount: (account: 'bank' | 'money' | 'black_money') => IPlayerAccount
+  getAccount: (account: "bank" | "money" | "black_money") => IPlayerAccount
   getAccounts: () => IPlayerAccount[],
-  getCoords: () => IPlayerCoords,
+  getCoords: () => ICoords,
   getGroup: () => string,
   getIdentifier: () => string,
   getInventory: (minimal?: boolean) => IPlayerInventoryItem[],
@@ -58,7 +58,7 @@ export interface IPlayerX {
   removeWeaponComponent: (weaponName: string, weaponComponent: string) => void,
   setMeta: (index: string, value: number | string | Record<string, any>) => void
   setAccountMoney: (account: string, money: number) => void
-  setCoords: (coords: IPlayerCoords) => void
+  setCoords: (coords: ICoords) => void
   setInventoryItem: (item: string, count: number) => void
   setJob: (name: string, grade: string | number) => void
   setMaxWeight: (newWeight: number) => void,
