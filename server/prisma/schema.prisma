@@ -22,17 +22,20 @@ model App {
 
 model PlayerApp {
   id       Int     @id @default(autoincrement())
+  pos      Int
   page     Int
   app      App     @relation(fields: [appId], references: [id])
   appId    Int
-  player   Player? @relation(fields: [playerId], references: [id])
-  playerId Int?
+  player   Player  @relation(fields: [playerId], references: [id])
+  playerId Int
   favorite Boolean @default(false)
   atHome   Boolean @default(true)
+
+  @@unique([appId, playerId])
 }
 
 model Player {
-  id       Int         @id @default(autoincrement())
-  playerId String      @unique
-  apps     PlayerApp[]
+  id         Int         @id @default(autoincrement())
+  identifier String      @unique
+  apps       PlayerApp[]
 }
