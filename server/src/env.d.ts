@@ -1,7 +1,7 @@
-import { IPlayerX } from "./src/interfaces/IPlayerX"
-import { IDiscordLogField } from "./src/interfaces/IDiscordLogField"
-import { IPlayerJob } from "./src/interfaces/IPlayerJob"
-import { IOneSync } from "./src/interfaces/IOneSync"
+import { IPlayerX } from "./interfaces/IPlayerX.js"
+import { IDiscordLogField } from "./interfaces/IDiscordLogField.js"
+import { IPlayerJob } from "./interfaces/IPlayerJob.js"
+import { IOneSync } from "./interfaces/IOneSync.js"
 
 interface ESX {
   ClearTimeout: (id: number) => void
@@ -15,7 +15,7 @@ interface ESX {
   GetJobs: () => IPlayerJob[],
   GetPlayerFromId: (playerId: number) => IPlayerX
   GetPlayerFromIdentifier: (identifier: string) => IPlayerX,
-  RegisterServerCallback: (name: string, handler: (source: string, cb: (...args: any[]) => void, ...args: any[]) => void) => void
+  RegisterServerCallback: (name: string, handler: (source: number, cb: (...args: any[]) => void, ...args: any[]) => void) => void
   RegisterUsableItem: (item: string, cb: (playerId: number) => void) => void
   SetTimeout: (ms: number, cb: () => void) => number
   Trace: (message: any) => void
@@ -23,4 +23,6 @@ interface ESX {
   OneSync: IOneSync
 }
 
-declare var ESX: ESX
+declare global {
+  var ESX: ESX
+}
