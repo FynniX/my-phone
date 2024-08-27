@@ -1,4 +1,4 @@
-import { ICoords } from "./ICoords"
+import { ICoords } from "./ICoords.js"
 
 export interface IOneSync {
   SpawnObject: (model: string | number, coords: ICoords, heading: number, cb: (entity: number) => void) => number

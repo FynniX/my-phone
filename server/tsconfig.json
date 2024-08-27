@@ -2,7 +2,8 @@
   "compilerOptions": {
     "strict": true,
     "target": "ES2017",
-    "module": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "lib": ["ESNext"],
     "types": ["@citizenfx/server"]
   },

@@ -1,10 +1,10 @@
-import { IPlayerAccount } from "./IPlayerAccount"
-import { ICoords } from "./ICoords"
-import { IPlayerMetadata } from "./IPlayerMetadata"
-import { IPlayerVariables } from "./IPlayerVariables"
-import { IPlayerWeapon } from "./IPlayerWeapon"
-import { IPlayerInventoryItem } from "./IPlayerInventoryItem"
-import { IPlayerJob } from "./IPlayerJob"
+import { IPlayerAccount } from "./IPlayerAccount.js"
+import { ICoords } from "./ICoords.js"
+import { IPlayerMetadata } from "./IPlayerMetadata.js"
+import { IPlayerVariables } from "./IPlayerVariables.js"
+import { IPlayerWeapon } from "./IPlayerWeapon.js"
+import { IPlayerInventoryItem } from "./IPlayerInventoryItem.js"
+import { IPlayerJob } from "./IPlayerJob.js"
 
 export interface IPlayerX {
   maxWeight: number,
