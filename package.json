@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "my-phone",
+  "version": "0.0.0",
+  "scripts": {
+    "install": "yarn run install:server && yarn run install:ui",
+    "install:server": "cd server && yarn install",
+    "install:ui": "cd ui && yarn install",
+    "build": "yarn run prisma:generate && yarn run build:server && yarn run build:ui",
+    "build:server": "cd server && yarn run build",
+    "build:ui": "cd ui && yarn run build",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:generate": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "4.16.2"
+  },
+  "devDependencies": {
+    "prisma": "4.16.2"
+  }
+}
