@@ -6,6 +6,8 @@ author 'Fynn Haupt <info@fynnhaupt.de>'
 description 'A mobile phone in Apple iPhone 15 Style in FiveM'
 version '1.0.0'
 
+lua54 'yes'
+
 client_scripts {
     'client/client.lua'
 }
@@ -16,6 +18,6 @@ files {
     'ui/dist/**/*'
 }
 
-
-
-
+dependencies {
+    'es_extended'
+}
