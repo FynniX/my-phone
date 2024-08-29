@@ -1,8 +1,8 @@
-import { PlayerApp } from "@prisma/client"
 import { IPlayerX } from "./interfaces/IPlayerX.js"
-import { prisma } from "./libs/prisma.js"
 import { getPlayerFromIdentifier } from "./utils/GetPlayerIdFromIdentifier.js"
 import { getPlayerApps } from "./utils/GetPlayerApps.js"
+import { prisma } from "./libs/prisma.js"
+import { ESX } from "./libs/esx.js"
 
 onNet('my-phone:apps:add', async (source: number, appId: number, pos: number, page: number, favorite: boolean, atHome: boolean) => {
   const player = ESX.GetPlayerFromId(source)
